@@ -4,7 +4,7 @@ tasks:
     before: |
       # Set up Moodle docker environment vars.
       export COMPOSE_PROJECT_NAME=moodle-gitpod
-      export MOODLE_DOCKER_WWWROOT="$GITPOD_REPO_ROOT"/moodle
+      export MOODLE_DOCKER_WWWROOT="$PWD/../moodle"
       export MOODLE_DOCKER_DB=pgsql
 
     init: |
