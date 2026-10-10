@@ -108,7 +108,7 @@ die Warnung erscheint, dass `admin/cron.php` noch nie gelaufen ist, kann Cron
 einmalig in WSL aus dem `moodle-docker`-Verzeichnis gestartet werden:
 
 ```bash
-cd /mnt/c/Users/bewor/MoodleTest/moodle-docker
+cd /mnt/c/Users/user/MoodleTest/moodle-docker
 export MOODLE_DOCKER_WWWROOT="$PWD/../moodle"
 export MOODLE_DOCKER_DB=pgsql
 
@@ -120,7 +120,7 @@ Schleife laufen. Dazu ein zweites WSL-Terminal öffnen und dort Folgendes
 ausführen; das Terminal muss dafür geöffnet bleiben:
 
 ```bash
-cd /mnt/c/Users/bewor/MoodleTest/moodle-docker
+cd /mnt/c/Users/user/MoodleTest/moodle-docker
 export MOODLE_DOCKER_WWWROOT="$PWD/../moodle"
 export MOODLE_DOCKER_DB=pgsql
 
