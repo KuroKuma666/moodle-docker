@@ -165,5 +165,25 @@ verlangsamen. Wenn das später stört, können die Repositories ins Linux-
 Dateisystem von WSL verschoben oder dort neu geklont werden, zum Beispiel nach
 `~/projects/`.
 
+## Sonstiges
+
 Die Datei `.gitpod.yml` betrifft Gitpod und ist für den lokalen WSL-Ablauf nicht
 erforderlich.
+
+## Fehlende Zugriffsrechte in Linux
+Wurden die beiden Repos in die WSL kopiert, dann kann es sein, dass die Ausführungsrechte für Skripte verloren gingen:
+
+```bash
+cd ~/projects/moodle-docker
+
+# Windows-Zeilenenden entfernen, falls sie noch vorhanden sind
+sed -i 's/\r$//' bin/moodle-docker-compose bin/moodle-docker-wait-for-db
+
+# Skripte ausführbar machen
+chmod +x bin/moodle-docker-compose bin/moodle-docker-wait-for-db
+
+# Docker-Umgebung setzen und starten
+export MOODLE_DOCKER_WWWROOT="$PWD/../moodle"
+export MOODLE_DOCKER_DB=pgsql
+bin/moodle-docker-compose up -d
+```
